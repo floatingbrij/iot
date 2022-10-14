@@ -1,0 +1,24 @@
+#include "DHT.h"
+
+#define DHTTYPE 22 //11,22,21
+#define DHTPIN 4 //4,5,...  
+
+DHT dht(DHTPIN,DHTTYPE);
+void setup(){
+    Serial.begin(9600);
+    Serial.println(F("DHTXxx test!"));
+    dht.begin();
+}
+void loop(){
+    delay(2000);
+    float h = dht.readHumidity();
+    float tempc = dht.readTemperature();
+    float tempf = dht.readTemperature(true);
+    if (isnan(h)||isnan(tempc)||isnan(tempf)){
+        Serial.println(F("Not working!"));
+        return;
+    }
+    float heatf = dht.computeHeatIndex(tempf,h);
+    float heatc = dht.computeHeatIndex(tempc,h,false);
+    //print everything
+}

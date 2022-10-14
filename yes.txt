@@ -1,0 +1,16 @@
+ir, pir - GND, out, Vcc
+dht
+	#include "DHT.h"
+	DHT dht(DHTPIN //4,5,DHTTYPE //22,11,21);
+	dht.begin();
+	dht.readTemperature(//true);
+	dht.readHumidity();
+	dht.computeHeatIndex(temp//c//f,h,//false);
+pot(4095) - Vcc, out, GND | light sensor (1023)
+lm35 temperature - flat side up, Vcc, out, GND
+
+
+
+ledcAttachPin(pin,channel);
+ledcSetup(channel,1000,12);
+
