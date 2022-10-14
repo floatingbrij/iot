@@ -10,7 +10,7 @@ pot(4095) - Vcc, out, GND | light sensor (1023)
 lm35 temperature - flat side up, Vcc, out, GND
 
 
-
+LED - big - out, small - GND 
 ledcAttachPin(pin,channel);
 ledcSetup(channel,1000,12);
 
