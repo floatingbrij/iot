@@ -1,5 +1,5 @@
 ir, pir - GND, out, Vcc
-dht
+dht Vcc,out,GND
 	#include "DHT.h"
 	DHT dht(DHTPIN //4,5,DHTTYPE //22,11,21);
 	dht.begin();
